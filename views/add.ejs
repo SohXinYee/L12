@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h2>Add New Recipe</h2>
+            </div>
+            <div class="card-body">
+                <form action="/add" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Recipe Title *</label>
+                        <input type="text" name="title" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ingredients (comma‑separated) *</label>
+                        <textarea name="ingredients" class="form-control" rows="4" placeholder="e.g., spaghetti, eggs, parmesan cheese, pancetta" required></textarea>
+                        <small class="text-muted">Separate each ingredient with a comma.</small>
+                    </div>
+                    <button type="submit" class="btn btn-success">Save Recipe</button>
+                    <a href="/" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

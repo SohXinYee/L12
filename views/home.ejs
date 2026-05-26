@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+<h1>Recipe Box</h1>
+
+<% if (recipes.length === 0) { %>
+    <p>No recipes yet. <a href="/recipes/new">Add your first recipe!</a></p>
+<% } else { %>
+    <ul class="recipe-list">
+        <% recipes.forEach(recipe => { %>
+            <li>
+                <a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a>
+            </li>
+        <% }) %>
+    </ul>
+    <p><a href="/recipes/new">+ Add New Recipe</a></p>
+<% } %>
+
+<%- include('partials/footer') %>
